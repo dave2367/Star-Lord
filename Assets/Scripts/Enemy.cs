@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel.Design.Serialization;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 0.9f;
+    private float _speed = 6.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,21 +14,34 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // move enmy left
-        transform.Translate(Vector3.left * _speed * Time.deltaTime);
-        // when enemy is off the screen respond
-        // find random positioin for x
-
-        if (transform.position.x < -12f)
+           transform.Translate(Vector3.left * _speed * Time.deltaTime);
+        if (transform.position.y < -11f)
         {
-            float randomY = Random.Range(-4f, 6f);
-            transform.position = new Vector3(12, randomY, 0);
+            float randomy = Random.Range(-5.0f, 6.0f);
+            transform.position = new Vector3(6, randomy, 0);
         }
-
     }
+
     private void OnTriggerEnter(Collider other)
-
     {
+         if (other.tag == "Player")
+         {
+            Player player = other.transform.GetComponent<Player>();
+            
+            if (player != null)
+            {
+                player.Damage();
+            }
+            
+            Destroy(this.gameObject);
+         }
+        
+            if (other.tag == "Laser")
 
+            {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+            }
     }
+
 }
