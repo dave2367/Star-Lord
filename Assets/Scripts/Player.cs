@@ -42,21 +42,21 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.up * verticalInput * _speed * Time.deltaTime);
 
 
-        if (transform.position.y >= 4.98f)
+        if (transform.position.y >= 4.4f)
         {
-            transform.position = new Vector3(transform.position.x, 4.98f, 0);
+            transform.position = new Vector3(transform.position.x, 4.4f, 0);
         }
-        else if (transform.position.y <= -5.3f)
+        else if (transform.position.y <= -4.4f)
         {
-            transform.position = new Vector3(transform.position.x, -5.3f, 0);
+            transform.position = new Vector3(transform.position.x, -4.4f, 0);
         }
-        if (transform.position.x > 11f)
+        if (transform.position.x > 9.1f)
         {
-            transform.position = new Vector3(-11f, transform.position.y, 0);
+            transform.position = new Vector3(-8.1f, transform.position.y, 0);
         }
-        else if (transform.position.x < -11f)
+        else if (transform.position.x < -8.1f)
         {
-            transform.position = new Vector3(11, transform.position.y, 0);
+            transform.position = new Vector3(9.1f, transform.position.y, 0);
         }
     }
     void FireLaser()
