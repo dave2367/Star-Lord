@@ -16,6 +16,7 @@ TagManager:
   - Rocket
   - Laser
   - Spawn Manager
+  - EnemyContainer
   layers:
   - Default
   - TransparentFX

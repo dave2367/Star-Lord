@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : Enemy
+public class Laser : MonoBehaviour
 {
     private float _speed = 8.0f;
 

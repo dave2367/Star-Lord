@@ -50,13 +50,13 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, -4.4f, 0);
         }
-        if (transform.position.x > 9.1f)
+        if (transform.position.x > 9.5f)
         {
-            transform.position = new Vector3(-8.1f, transform.position.y, 0);
+            transform.position = new Vector3(-9.4f, transform.position.y, 0);
         }
-        else if (transform.position.x < -8.1f)
+        else if (transform.position.x < -9.5f)
         {
-            transform.position = new Vector3(9.1f, transform.position.y, 0);
+            transform.position = new Vector3(9.5f, transform.position.y, 0);
         }
     }
     void FireLaser()
