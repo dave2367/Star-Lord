@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour 
-{ 
+{
     [SerializeField]
     private float _speed = 8.0f;
 
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+
     {
          if (other.tag == "Player")
          {
